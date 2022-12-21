@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Лабораторная работа №9</title>
+</head>
+<body>
+	<h2>Обратное число для A по модулю C</h2>
+	<form name="form" action="javascript:count()" method="post">
+		<input type="text" name="a" value="0"> - a
+		<br>
+		<input type="text" name="c" value="0"> - c
+		<br>
+		<input type="submit">
+	</form>
+</body>
+<script type="text/javascript">
+		function count() {
+			var a = document.form.a.value;
+			var c = document.form.c.value;
+			var result;
+
+			if (a%c==0 || c%a==0) {
+				alert ("Для данных чисел отсутствует обратное число");
+			}
+			else {
+				for (var count = 0; c-1; count++) {
+					result = (a * count)%c;
+					if (result==1) {
+						break;
+					}
+				}
+				alert (count);
+			}
+		}
+	</script>
+</html>
